@@ -1,0 +1,102 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+        http://www.springframework.org/schema/util 
+        http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+	<context:component-scan base-package="uday.mediaorganizer.controller" />
+	<context:component-scan base-package="uday.service" />
+
+	<mvc:annotation-driven />
+
+	<mvc:resources mapping="/css/**" location="/WEB-INF/pages/css/*" />
+	<mvc:resources mapping="/js/**" location="/WEB-INF/pages/js/*" />
+	<mvc:resources mapping="/images/**" location="/WEB-INF/pages/images/*" />
+	<mvc:resources mapping="/**" location="/WEB-INF/pages/static/*" />
+
+	<util:map id="FileTypeMap">
+		<entry key="video" value="Movie" />
+		<entry key="audio" value="Music" />
+		<entry key="application" value="Book" />
+	</util:map>
+
+	<util:map id="ApplicationVariables">
+		<entry key="MoviePath" value="/home/uday_reddy/Movies/" />
+		<entry key="allMedia" value="AllMedia"/>
+		<entry key="movie" value="Movie"/>
+	</util:map>
+	
+	<util:map id="SelectQueryFactory">
+		<entry key="Actors" value="select Name from Actors where Name like ? limit ?,?" />
+		<entry key="Genres" value="select Name from Genres where Name like ? limit ?,?" />
+		<entry key="Writers" value="select Name from Writers where Name like ? limit ?,?" />
+		<entry key="Director" value="select Director from Movie where Director like ? limit ?,?" />
+		<entry key="Name" value="select Name from Movie where Name like ? limit ?,?" />
+		<entry key="Year" value="select Year from Movie where Year like ? limit ?,?" />
+		<entry key="Rating" value="select Rating from Movie where Rating = ? limit ?,?" />
+		<!-- <entry key="Rating" value="select Rating from Movie where Rating <= ? limit ?,?" /> -->
+		<entry key="Runtime" value="select Runtime from Movie where Runtime like ? limit ?,?" />
+		<entry key="allMedia" value="AllMedia"/>
+		<entry key="movie" value="Movie"/>
+	</util:map>
+	
+	<util:map id="MediaListQueryFactory">
+	    <entry key="ListQuery" value="select movie.id, movie.Name, movie.Year,
+			Group_CONCAT(distinct(genre.Name)) as Genres,
+			movie.Rating, movie.Runtime, movie.Director,
+			Group_CONCAT(distinct(writer.name)) as Writers,
+			Group_CONCAT(distinct(actor.Name)) as Actors,
+			movie.Plot, movie.MediaOrganizerFilePath
+			from Movie movie
+			inner join Movie_Genres_Mapping genresMap on genresMap.MovieID = movie.id
+			inner join Genres genre on genresMap.GenreID = genre.GenreID
+			inner join Movie_Actors_Mapping actorsMap on actorsMap.MovieID = movie.id
+			inner join Actors actor on actorsMap.ActorID = actor.ActorID
+			inner join Movie_Writers_Mapping writersMap on writersMap.MovieID = movie.id
+			inner join Writers writer on writersMap.WriterID = writer.WriterID " />
+		<entry key="Actors" value=" where actor.Name like ? group by(movie.id) limit ?,? " />
+		<entry key="Genres" value=" where genre.Name like ? group by(movie.id) limit ?,?  " />
+		<entry key="Writers" value=" where writer.Name like ? group by(movie.id) limit ?,?  " />
+		<entry key="Director" value=" where movie.Director like ? group by(movie.id) limit ?,?  " />
+		<entry key="Name" value=" where movie.Name like ? group by(movie.id) limit ?,?  " />
+		<entry key="Year" value=" where movie.Year like ? group by(movie.id) limit ?,?  " />
+		<entry key="Rating" value=" where movie.Rating = ? group by(movie.id) limit ?,?  " />
+		<!-- <entry key="Rating" value="select Rating from Movie and Rating <= ? limit ?,?" /> -->
+		<entry key="Runtime" value=" where movie.Runtime like ? group by(movie.id) limit ?,?  " />
+		<entry key="allMedia" value="AllMedia"/>
+		<entry key="movie" value="Movie"/>
+	</util:map>
+
+	<util:map id="ReturnStatusVariables">
+		<entry key="0" value="Failure" />
+		<entry key="0Message" value="Failure in insertion , please try again." />
+		<entry key="1" value="Success" />
+		<entry key="1Message" value="Successfully inserted." />
+		<entry key="error" value="Error" />
+		<entry key="errorMessage" value="Internal error ,please try again." />
+		<entry key="duplicateMediaMessage" value="Same Media found Please enter different media or change the name of the existing media." />
+	</util:map>
+
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/pages/</value>
+		</property>
+		<!-- <property name="suffix"> <value>.jsp</value> </property> -->
+	</bean>
+
+	<!-- <bean id="properties" class="org.springframework.beans.factory.config.PropertiesFactoryBean"> 
+		<property name="location"> <list> <value>classpath:ApplicationVariables.properties</value> 
+		</list> </property> </bean> -->
+</beans>

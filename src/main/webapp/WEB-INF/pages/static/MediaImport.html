@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- Bootstrap CSS Toolkit styles -->
+<link rel="stylesheet" href="css/fileupload/jquery.fileupload.css">
+
+</head>
+
+<body>
+	
+		<!-- Button to select & upload files -->
+		<span class="btn btn-success fileinput-button"> <span>Select
+				files...</span> <!-- The file input field used as target for the file upload widget -->
+			<input id="fileupload" type="file" name="file" multiple>
+		</span>
+
+
+		<!-- The global progress bar -->
+		<p>Upload progress</p>
+		<div id="progress" class="progress progress-success progress-striped">
+			<div class="bar"></div>
+		</div>
+
+
+
+		<!-- The list of files uploaded -->
+		<p>Files uploaded:</p>
+		<ul id="files"></ul>
+
+
+
+ 		<script src="js/fileupload/FileUpload.js"></script>
+</body>
+</html>

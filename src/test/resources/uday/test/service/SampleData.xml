@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+	<Movie id="71" Name="Thor" Year="" Rating="0.0"
+		  Released="" Runtime="" Genres="" Director="" Writers=""
+		Actors="" Plot="" Poster=""  Type="Movie" 
+		MediaOrganizerFilePath="/home/uday/MediaOrganizer/Movies/Thor" />
+	<Movie id="72" Name="Iron Man" Year="" Rating="0.0"
+		  Released="" Runtime="" Genres="" Director="" Writers=""
+		Actors="" Plot="" Poster=""  Type="Movie"
+		MediaOrganizerFilePath="/home/uday/MediaOrganizer/Movies/Iron Man" />
+</dataset>

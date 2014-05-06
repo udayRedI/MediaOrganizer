@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+	<Movie  Name="Thor" Year="" Rating="0.0"  
+		Released="" Runtime="" Genres="" Director="" Writers="" Actors=""
+		Plot="" Poster=""   Type="Movie"
+		MediaOrganizerFilePath="/home/uday/MediaOrganizer/Movies/Thor" />
+	<Movie  Name="Iron Man" Year="" Rating="0.0"  
+		Released="" Runtime="" Genres="" Director="" Writers="" Actors=""
+		Plot="" Poster=""   Type="Movie"
+		MediaOrganizerFilePath="/home/uday/MediaOrganizer/Movies/Iron Man" />
+	<Movie  Name="Aadavariki" Year="" Rating="0"  
+		Released="" Runtime="" Genres="" Director="" Writers="" Actors=""
+		Plot="" Poster=""   Type="Movie"
+		MediaOrganizerFilePath="/home/uday_reddy/Movies/Aadavariki" />
+</dataset>

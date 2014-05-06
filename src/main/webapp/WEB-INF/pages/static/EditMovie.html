@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal">&times;</a>
+		<center>
+			<h2 id="headerMovieName"></h2>
+		</center>
+	</div>
+	<div class="modal-body">
+		<form class="form-horizontal">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label" id="movieNameLabel" for="movieName"></label>
+					<div class="controls">
+						<input style="display: none" type="text" id="editFormMovieId"> 
+						<input type="text" id="editFormMovieName" placeholder="Movie Name">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" id="yearLabel" for="year"></label>
+					<div class="controls">
+						<input type="text" id="editFormMovieYear" placeholder="Year">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" id="ratingLabel" for="rating"></label>
+					<div class="controls">
+						<input type="text" id="editFormMovieRating" placeholder="Rating">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" id="lengthLabel" for="length"></label>
+					<div class="controls">
+						<input type="text" id="editFormMovieLength" placeholder="Length">
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label" id="genresLabel" for="genre"></label>
+					<div class="controls">
+						<input type="text" id="editFormMovieGenres" placeholder="Genre">
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label" id="directorLabel" for="director"></label>
+					<div class="controls">
+						<input type="text" id="editFormMovieDirector" placeholder="Director">
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label" id="actorsLabel" for="actors"></label>
+					<div class="controls">
+						<input type="text" id="editFormMovieActors" placeholder="Actors">
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label" id="writersLabel" for="writers"></label>
+					<div class="controls">
+						<input type="text" id="editFormMovieWriters" placeholder="Writers">
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label" id="pathLabel" for="path"></label>
+					<div class="controls">
+						<input type="text" id="editFormMoviePath" class="uneditable-input"
+							placeholder="Path" readonly>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label" id="plotLabel" for="plot"></label>
+					<div class="controls">
+						<input type="text" id="editFormMoviePlot" placeholder="Plot">
+					</div>
+				</div>
+			</fieldset>
+		</form>
+
+	</div>
+	<div class="modal-footer">
+		<a href="#" id="getMovieData" class="btn btn-primary ladda-button" data-style="expand-left" data-spinner-color="#FF0000">
+		<span class="ladda-label">Get Media	Data</span></a>
+		<a href="#" id="submitForm" type="submit" class="btn btn-primary ladda-button" data-style="expand-left" data-spinner-color="#FF0000">
+		<span class="ladda-label">Save Changes</span></a> 
+		<a href="#" class="btn"	id="closeLabel" data-dismiss="modal">Close</a>
+	</div>
+</body>
+</html>

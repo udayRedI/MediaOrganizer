@@ -1,0 +1,89 @@
+.container {
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+	overflow: hidden !important;
+	max-width: 100% !important;
+}
+
+.content_wrapper {
+	
+}
+
+.pane {
+    width:920px;
+   	float:left;
+	
+}
+
+.media_list {
+	list-style: none;
+}
+
+.media_element {
+	
+}
+
+.media_image {
+	
+}
+
+.edit_image {
+	height: 30px;
+	float: right;
+	cursor: pointer;
+}
+
+.modal {
+	bottom: auto;
+	overflow-y: auto;
+}
+
+.navbar {
+	margin-bottom: -25px;
+	min-height: 0px;
+}
+
+.navbar .nav>li>a {
+	padding:;
+}
+
+#search {
+	size: 20px;
+	width: 250px;
+	height: 34px;
+}
+
+
+
+label {
+	color: #0088cc;
+	background-color: none;
+	display: inline;
+}
+
+#loading-indicator {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+
+select,textarea,input[type="text"],input[type="password"],input[type="datetime"],input[type="datetime-local"],input[type="date"],input[type="month"],input[type="time"],input[type="week"],input[type="number"],input[type="email"],input[type="url"],input[type="search"],input[type="tel"],input[type="color"],.uneditable-input
+	{
+	margin-bottom: 0px;
+	padding:0px 12px;
+}
+
+.movable-pane{
+width:3732px;
+
+}
+
+.movable-element{
+	width:920px;
+	float:left;
+	margin-right:440px;
+}
+
+.typeahead {
+	z-index:0;
+	}
